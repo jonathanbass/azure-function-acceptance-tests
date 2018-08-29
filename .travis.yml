@@ -1,10 +1,12 @@
 language: csharp
 dist: trusty
 mono: latest
-dotnet: 2.1.400
+dotnet: 2.1.400 # sets the dotnet cli version 
 solution: src/AzureFunction.sln
 install:
+# sets the path for the full .NET Framework version
 - export FrameworkPathOverride=$(dirname $(which mono))/../lib/mono/4.5/
+
 - dotnet restore src/AzureFunction.sln
 script:
 - dotnet build src/AzureFunction.sln
