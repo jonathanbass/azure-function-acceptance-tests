@@ -11,10 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoFixture" Version="4.5.0" />
     <PackageReference Include="FluentAssertions" Version="5.4.1" />
-    <PackageReference Include="Moq" Version="4.9.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="NUnit" Version="3.10.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+    <PackageReference Include="SpecFlow" Version="2.4.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +26,21 @@
 
   <ItemGroup>
     <Reference Include="System.Web" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Features\GetMovieFunctionTests.feature.cs">
+      <DependentUpon>GetMovieFunctionTests.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Features\GetMovieFunctionTests.feature">
+      <LastGenOutput>GetMovieFunctionTests.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
   </ItemGroup>
 
 </Project>
