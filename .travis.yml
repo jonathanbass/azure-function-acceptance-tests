@@ -1,6 +1,6 @@
 language: csharp
 dist: trusty
-mono: none
+mono: latest
 solution: src/AzureFunction.sln
 install:
 - dotnet restore src/AzureFunction.sln
