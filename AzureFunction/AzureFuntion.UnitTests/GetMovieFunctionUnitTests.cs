@@ -28,17 +28,7 @@ namespace AzureFunction.UnitTests
             var fixture = new Fixture();
             var movieQuery = fixture.Create<MovieQuery>();
 
-            var query = HttpUtility.ParseQueryString(string.Empty);
-            query["leadactor"] = movieQuery.LeadActor;
-            query["year"] = movieQuery.Year.ToString();
-
-            var queryString = query.ToString();
-            var request = new HttpRequestMessage {
-                RequestUri = new Uri($"http://localhost/api/shoppingcart?{queryString}")
-            };
-
-            var configuration = new HttpConfiguration();
-            request.SetConfiguration(configuration);
+            var request = GetRequest(movieQuery);
 
             _movieResponse = fixture.Build<MovieResponse>()
                 .With(mr => mr.LeadActor, movieQuery.LeadActor)
@@ -84,6 +74,23 @@ namespace AzureFunction.UnitTests
         public void TheTheResponseObjectContainsTheCorrectGenre()
         {
             _responseObject.Genre.Should().Be(_movieResponse.Genre);
+        }
+
+        private static HttpRequestMessage GetRequest(MovieQuery movieQuery)
+        {
+            var query = HttpUtility.ParseQueryString(string.Empty);
+            query["leadactor"] = movieQuery.LeadActor;
+            query["year"] = movieQuery.Year.ToString();
+
+            var queryString = query.ToString();
+            var request = new HttpRequestMessage {
+                RequestUri = new Uri($"http://localhost/api/shoppingcart?{queryString}")
+            };
+
+            var configuration = new HttpConfiguration();
+            request.SetConfiguration(configuration);
+
+            return request;
         }
     }
 }
