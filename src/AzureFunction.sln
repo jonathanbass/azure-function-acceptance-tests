@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.UnitTests", "Data.UnitTests\Data.UnitTests.csproj", "{A0F05CC4-4876-44C8-87C0-3B11E4905FE3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureFunction.UnitTests", "AzureFuntion.UnitTests\AzureFunction.UnitTests.csproj", "{260996C5-9CDF-46CA-A087-FE246E389C08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureFunction.UnitTests", "AzureFunction.UnitTests\AzureFunction.UnitTests.csproj", "{260996C5-9CDF-46CA-A087-FE246E389C08}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureFunction.AcceptanceTests", "AzureFunction.AcceptanceTests\AzureFunction.AcceptanceTests.csproj", "{1B058DC7-F8B7-4FB2-85F4-96E398391E4A}"
 EndProject
